@@ -1,0 +1,64 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="life-cycle-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      #output {
+        width: 100%;
+        margin: 30px;
+      }
+    </style>
+    <h2>Life Cycle</h2>
+    <div id="output"></div>
+  </template>
+
+  <script>
+    var messageFragments = [];
+
+    function appendToOutput(str) {
+      var p = document.createElement('p');
+      p.textContent = str;
+
+      var outputElm = document.getElementById('output');
+      if (outputElm) {
+        if (messageFragments.length > 0) {
+          messageFragments.forEach(function (messageElm) {
+            outputElm.appendChild(messageElm);
+          });
+          messageFragments = [];
+        }
+        outputElm.appendChild(p);
+      } else {
+        messageFragments.push(p);
+      }
+    }
+
+    var LifeCycleApp = Polymer({
+      is: 'life-cycle-app',
+      created: function() {
+        appendToOutput(this.localName + '#' + this.id + ' was created');
+      },
+
+      ready: function() {
+        appendToOutput(this.localName + '#' + this.id + ' has local DOM initialized');
+      },
+
+      attached: function() {
+        appendToOutput(this.localName + '#' + this.id + ' was attached');
+      },
+
+      detached: function() {
+        appendToOutput(this.localName + '#' + this.id + ' was detached');
+      },
+
+      attributeChanged: function(name, type) {
+        appendToOutput(this.localName + '#' + this.id + ' attribute ' + name +
+          ' was changed to ' + this.getAttribute(name));
+      }
+    });
+  </script>
+</dom-module>

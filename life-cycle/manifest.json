@@ -1,0 +1,7 @@
+{
+  "name": "life-cycle",
+  "short_name": "life-cycle",
+  "description": "An experiment on polymer element life cycles",
+  "start_url": "/",
+  "display": "standalone"
+}
