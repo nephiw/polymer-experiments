@@ -1,0 +1,23 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-input/iron-input.html">
+
+<dom-module id="nhw-editable-property">
+  <template>
+    <p>This is what you typed: <strong>{{ typed }}</strong></p>
+    <input is="iron-input"
+           bind-value="{{ typed }}"
+           placeholder="Type here to see the binding...">
+  </template>
+
+  <script>
+    Polymer({
+      is: 'nhw-editable-property',
+      properties: {
+        typed: {
+          type: String,
+          value: 'Default Value'
+        }
+      }
+    });
+  </script>
+</dom-module>
