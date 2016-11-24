@@ -1,0 +1,27 @@
+<link rel="import"  href="../bower_components/polymer/polymer.html">
+
+<dom-module id="nhw-property">
+  <template>
+    <style>
+      :host {
+        display: block;
+        margin: 15px;
+      }
+    </style>
+    This is <b>{{ owner }}</b>'s name-tag element. The name comes from binding to a property, note
+    that the value comes from the dom instance in the index, not the default value.
+  </template>
+
+  <script>
+    Polymer({
+      is: 'nhw-property',
+      properties: {
+        owner: {
+          type: String,
+          value: 'Default Name'
+        }
+      }
+    });
+  </script>
+
+</dom-module>
