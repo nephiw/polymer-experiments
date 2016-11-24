@@ -1,6 +1,5 @@
 {
-  "name": "life-cycle",
-  "description": "An experiment on polymer element life cycles",
+  "name": "polymer-experiments",
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0"
