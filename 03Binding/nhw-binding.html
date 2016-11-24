@@ -1,0 +1,17 @@
+<link rel="import"  href="../bower_components/polymer/polymer.html">
+
+<dom-module id="nhw-binding">
+  <template>
+    This is <b>{{ owner }}</b>'s name-tag element. The name comes from binding.
+  </template>
+
+  <script>
+    Polymer({
+      is: 'nhw-binding',
+      ready: function () {
+        this.owner = "Nephi";
+      }
+    });
+  </script>
+
+</dom-module>
